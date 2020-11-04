@@ -63,7 +63,15 @@
 			line-height: 32px;	/*文字竖直方向上居中*/
 			text-align: center; /*文字水平方向上居中*/
 			vertical-align: middle;
+			}
+		.cart-container{
+			/*修改购物车的定位方式,为下拉菜单提供参照物*/
+			position: relative;
+			float: right;
+			margin-top: 6px;
+			margin-left: 20px;
 		}
+
 		.cart{
 			float: right;
 			background: #f9f9f9;
@@ -73,6 +81,7 @@
 			margin-left: 20px;
 			/*修改光标的样式*/
 			cursor: pointer;
+			
 		}
 		.cart > .fa{
 			padding-left: 0.6em;
@@ -85,6 +94,17 @@
 		}
 		.cart> .caret-rotate{ /*动画目标类*/
 			transform: rotate(180deg);
+		}
+		.cart> .dropdown{
+			position: absolute;/*绝对定位的元素可以处于其他元素上方*/
+		    top: 31px;
+			right: -1px;
+			border: 1px solid #ddd;
+			/*padding:2em 3em 2em 3em  上右下左*/
+			padding: 2em 3em;
+			width: 262px;
+			background: #fff;
+			z-index: 1;
 		}
 	</style>
 </head>
@@ -116,11 +136,15 @@
 		<div class="container">
 			<!-- LOGO -->
 			<img src="img/logo.png" alt="iWeb LOGO">
+			<div class="cart-container">
 			<!-- 我的购物车 -->
 			<div class="cart" id="myCart">
 				<span class="fa fa-shopping-cart fa-lg"></span>
 			   <span>我的购物车(<b>0</b>)</span>
 			   <span class="fa fa-caret-down caret" id="caret"></span>
+			
+			</div>
+			<div class="dropdown">请登录后查看您的购物车
 			</div>
 			<!-- 输入框 -->
 			<div class="search">
